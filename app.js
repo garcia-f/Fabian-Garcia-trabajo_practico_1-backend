@@ -7,9 +7,16 @@ const morgan = require('morgan');
 const path = require('path');
 require('dotenv').config();
 
+const { sequelize } = require('./database'); // Ajusta la ruta según la ubicación de tu archivo de configuración de Sequelize
+const { usuario } = require('./src/models/usuario.model');
+const { proyecto } = require('./src/models/proyecto.model');
+const { tarea } = require('./src/models/tarea.model');
+
 // Se conecta la Base de Datos
-const { conectarDB } = require('./database');
+const { conectarDB } = require('./database.js');
+
 conectarDB()
+
 
 
 const app = express();
