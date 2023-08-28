@@ -1,4 +1,5 @@
 const { DataTypes, sequelize } = require('../../database.js');
+const Proyecto = require('../models/proyecto.model.js')
 
 const tarea = sequelize.define( 'tarea', {
 
@@ -14,6 +15,10 @@ const tarea = sequelize.define( 'tarea', {
     descripcion: {
         type: DataTypes.STRING(100),
         allowNull: false
+    },
+    proyecto_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
     },
     createdAt: {
         type: DataTypes.DATE,
@@ -36,5 +41,9 @@ const tarea = sequelize.define( 'tarea', {
     tableName: 'tarea'
 } );
 
+Proyecto.hasMany(tarea, { foreignKey: "proyecto_id", as: "tareas" });
+tarea.belongsTo(Proyecto, { foreignKey: "proyecto_id" });
+
 tarea.sync({ force: false });
+
 module.exports = tarea; 

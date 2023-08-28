@@ -3,7 +3,7 @@ const { DataTypes, sequelize } = require('../../database.js')
 
 const usuario = sequelize.define( 'usuario', {
 
-    id: {
+    usuario_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
@@ -18,6 +18,10 @@ const usuario = sequelize.define( 'usuario', {
     },
     correo: {
         type: DataTypes.STRING(50),
+        allowNull: false
+    },
+    password:{
+        type:DataTypes.INTEGER(10),
         allowNull: false
     },
     createdAt: {
@@ -40,6 +44,8 @@ const usuario = sequelize.define( 'usuario', {
     deletedAt: true,
     tableName: 'usuario'
 } );
+
+
 
 usuario.sync({ force: false });
 
