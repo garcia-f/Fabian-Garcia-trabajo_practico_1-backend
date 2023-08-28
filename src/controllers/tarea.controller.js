@@ -12,7 +12,7 @@ ctrl.crearTarea = async (req, res) => {
        // Se verifica si la tarea existe
       const existeTarea = await Tarea.findOne({
         where: {
-          nombre,
+          nombreTarea,
         },
       });
       if (existeTarea) {

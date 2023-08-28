@@ -67,7 +67,6 @@ ctrl.actualizarProyecto = async (req, res) => {
     try {
 
         const proyecto = await Proyecto.findByPk(proyecto_id);
-        //Verificamos si existe el proyecto
         if (!proyecto) {
             return res.status(404).json({ message: "Proyecto no encontrado" });
         }
