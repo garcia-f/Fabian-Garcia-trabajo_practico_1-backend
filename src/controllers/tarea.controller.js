@@ -1,7 +1,7 @@
 const Tarea = require('../models/tarea.model');
 const ctrl = {};
 
-// crear tarea
+// controlador para crear tarea
 ctrl.crearTarea = async (req, res) => {
     const {
       nombreTarea,
@@ -35,7 +35,7 @@ ctrl.crearTarea = async (req, res) => {
     }
 };
   
-// obtener todas las tareas
+// controlador para obtener todas las tareas
 ctrl.obtenerTareas = async (_req, res) => {
     try {
       const listaTareas = await Tarea.findAll();

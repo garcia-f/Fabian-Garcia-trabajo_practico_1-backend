@@ -2,7 +2,7 @@ const Proyecto = require('../models/proyecto.model');
 const Tarea = require('../models/tarea.model')
 const ctrl = {};
 
-//Controlador para registrar un proyecto
+//Controlador para crear un proyecto
 ctrl.crearProyecto = async (req, res) => {
     const {
         nombreProyecto
@@ -37,7 +37,7 @@ ctrl.obtenerProyectos = async (req, res) => {
     }
 };
 
-//Controlador para obtener un proyecto en específico
+//Controlador para obtener un proyecto
 ctrl.obtenerProyecto = async (req, res) => {
     try {
         const {proyecto_id} = req.params;
@@ -100,7 +100,7 @@ ctrl.actualizarProyecto = async (req, res) => {
     }
 };
 
-// Controlador para realizar un borrado lógico un proyecto
+// controlador para eliminar un proyecto
 ctrl.eliminarProyecto = async (req, res) => {
     const { proyecto_id } = req.params;
 

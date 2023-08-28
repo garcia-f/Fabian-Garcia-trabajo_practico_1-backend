@@ -6,10 +6,10 @@ const {
     obtenerTareas
 } = require('../controllers/tarea.controller');
 
-// crear una tarea
+//ruta para crear una tarea
 router.post('/crearTarea/:proyecto_id', crearTarea);
 
-// obtener todas las tareas
+// ruta para obtener todas las tareas
 router.get('/obtenerTareas', obtenerTareas);
 
 module.exports = router;
