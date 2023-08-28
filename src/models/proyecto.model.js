@@ -1,5 +1,5 @@
 const { DataTypes, sequelize } = require('../../database.js');
-const Usuario = require('../models/usuario.model.js')
+
 
 const proyecto = sequelize.define( 'proyecto', {
 
@@ -37,8 +37,7 @@ const proyecto = sequelize.define( 'proyecto', {
     tableName: 'proyecto'
 } );
 
-Usuario.hasMany(proyecto, { foreignKey: "usuario_id", as: "proyectos" });
-proyecto.belongsTo(Usuario, { foreignKey: "usuario_id" });
+
 
 proyecto.sync({ force: false });
 module.exports = proyecto; 
